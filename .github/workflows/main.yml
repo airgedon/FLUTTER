@@ -13,10 +13,6 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    
-#       - name: cleanup
-#         run : |
-#           sudo chown -R $USER:$USER $GITHUB_WORKSPACE     
           
       - uses: actions/checkout@v2
     
@@ -31,9 +27,9 @@ jobs:
           docker rm flutter-web
           
           
-      - name: Build an image
-        run: |
-          docker build -t flutter-web .
+#       - name: Build an image
+#         run: |
+#           docker build -t flutter-web .
       
       
       - name: Run the container
