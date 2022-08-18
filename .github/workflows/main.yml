@@ -24,6 +24,14 @@ jobs:
         run: |
           docker build -t flutter-web .
       
+      - name: Stop main container
+        run: | 
+          docker stop flutter-web
+
+      - name: Delete the container
+        run: |
+          docker rm flutter-web
+      
       - name: Run the container
         run: |
           docker run -d -p 8080:80 --name flutter-web flutter-web
