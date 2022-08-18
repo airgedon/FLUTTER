@@ -20,17 +20,21 @@ jobs:
           
       - uses: actions/checkout@v2
     
-      - name: Create the container
-        run: |
-          docker build -t flutter-web .
-      
+    
       - name: Stop main container
         run: | 
           docker stop flutter-web
 
+
       - name: Delete the container
         run: |
           docker rm flutter-web
+          
+          
+      - name: Build an image
+        run: |
+          docker build -t flutter-web .
+      
       
       - name: Run the container
         run: |
